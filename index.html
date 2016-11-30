@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trial PWA Todo</title>
+  <link rel="stylesheet" href="./mdl/material.min.css">
+  <script src="./mdl/material.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Trial PWA Todo</span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+          <i class="material-icons">search</i>
+        </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Trial PWA Todo</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Todos</a>
+        <a class="mdl-navigation__link" href="">Archives</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="mdl-grid page-content">
+        <div class="mdl-cell mdl-cell--6-col">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: calc(100% - 120px);">
+            <input class="mdl-textfield__input" type="text" id="new-todo">
+            <label class="mdl-textfield__label" for="new-todo">Add todo item.</label>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left: 16px;">
+            Add
+          </button>
+        </div>
+        <div class="mdl-cell mdl-cell--8-col">
+          <ul class="demo-list-item mdl-list">
+            <li class="mdl-list__item">
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked />
+                <span class="mdl-checkbox__label">Checkbox</span>
+              </label>
+            </li>
+            <li class="mdl-list__item">
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+                <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" checked />
+                <span class="mdl-checkbox__label">どうなんだろうねどうなんだろうねどうなんだろうねどうなんだろうねどうなんだろうねどうなんだろうね</span>
+              </label>
+            </li>
+            <li class="mdl-list__item">
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+                <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" checked />
+                <span class="mdl-checkbox__label">Checkbox</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
