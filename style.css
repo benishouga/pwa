@@ -5,3 +5,11 @@
 .mdl-checkbox {
     height: auto;
 }
+
+a.archive {
+    color: rgba(0, 0, 0, .44);
+}
+
+li.checked span {
+    text-decoration: line-through;
+}

@@ -10,6 +10,7 @@
   <script src="./mdl/material.min.js"></script>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="./main.js"></script>
 </head>
 
 <body>
@@ -40,32 +41,30 @@
         <div class="mdl-cell mdl-cell--6-col">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: calc(100% - 120px);">
             <input class="mdl-textfield__input" type="text" id="new-todo">
-            <label class="mdl-textfield__label" for="new-todo">Add todo item.</label>
+            <label class="mdl-textfield__label" for="new-todo">Todo title</label>
           </div>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left: 16px;">
+          <button id="add" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-left: 16px;">
             Add
           </button>
         </div>
+
         <div class="mdl-cell mdl-cell--8-col">
-          <ul class="demo-list-item mdl-list">
-            <li class="mdl-list__item">
-              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-                <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked />
-                <span class="mdl-checkbox__label">Checkbox</span>
-              </label>
-            </li>
-            <li class="mdl-list__item">
-              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
-                <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" checked />
-                <span class="mdl-checkbox__label">どうなんだろうねどうなんだろうねどうなんだろうねどうなんだろうねどうなんだろうねどうなんだろうね</span>
-              </label>
-            </li>
-            <li class="mdl-list__item">
-              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
-                <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" checked />
-                <span class="mdl-checkbox__label">Checkbox</span>
-              </label>
-            </li>
+          <ul id="todos" class="demo-list-item mdl-list">
+            <template id="list-item">
+              <li class="mdl-list__item mdl-list__item--three-line">
+                <span class="mdl-list__item-primary-content">
+                  <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox">
+                    <span class="mdl-list__item-primary-content">
+                      <input type="checkbox" class="mdl-checkbox__input" checked />
+                      <span class="title mdl-list__item-text-body" />
+                    </span>
+                  </label>
+                </span>
+                <span class="mdl-list__item-secondary-content">
+                  <a class="mdl-list__item-secondary-action archive" href="#"><i class="material-icons">archive</i></a>
+                </span>
+              </li>
+            </template>
           </ul>
         </div>
       </div>
