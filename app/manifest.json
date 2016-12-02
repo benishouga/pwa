@@ -2,11 +2,11 @@
   "name": "Progressive Web Application Todo",
   "short_name": "Pwa Todo",
   "icons": [{
-    "src": "icons/icon-144x144.png",
+    "src": "./icons/icon-144x144.png",
     "sizes": "144x144",
     "type": "image/png"
   }],
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fafafa",
   "theme_color": "#3f51b5"
