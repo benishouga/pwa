@@ -6,10 +6,14 @@
     height: auto;
 }
 
-a.archive {
+a.archive, a.unarchive {
     color: rgba(0, 0, 0, .44);
 }
 
 li.checked span {
     text-decoration: line-through;
+}
+
+.hide {
+    display: none;
 }

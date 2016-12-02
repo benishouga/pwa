@@ -12,14 +12,15 @@ let create = function(title) {
   return {
     id: id(),
     title: title,
-    achieved: false,
-    done: false,
-    added: new Date()
+    archived: false,
+    done: false
   }
 };
 
 let json = localStorage.getItem('todos');
 let todos = json && JSON.parse(json) || [];
+let searchText = null;
+let showingArchive = false;
 
 let renderItem = (function() {
   return function renderItem(todo, element) {
@@ -31,13 +32,29 @@ let renderItem = (function() {
     element.json = json;
     todo.done ? element.classList.add('checked') : element.classList.remove('checked');
     let checkbox = element.querySelector('input[type=checkbox]')
-    console.log('checkbox', checkbox);
     checkbox.id = 'checkbox' + todo.id;
     checkbox.checked = todo.done;
     checkbox.addEventListener('change', function(value) {
       todo.done = checkbox.checked;
       update(todos);
     });
+    let archive = element.querySelector('.archive');
+    let unarchive = element.querySelector('.unarchive');
+    if (todo.archived) {
+      archive.classList.add('hide');
+      unarchive.classList.remove('hide');
+      unarchive.addEventListener('click', function(value) {
+        todo.archived = false;
+        refresh(todos);
+      });
+    } else {
+      archive.classList.remove('hide');
+      unarchive.classList.add('hide');
+      archive.addEventListener('click', function(value) {
+        todo.archived = true;
+        refresh(todos);
+      });
+    }
     element.querySelector('label').htmlFor = checkbox.id;
     element.querySelector('input[type=checkbox]').checked = todo.done;
     element.querySelector('.title').innerHTML = todo.title;
@@ -63,6 +80,9 @@ let render = (function() {
     }
     list.json = JSON.stringify(todos);
     todos.forEach(function(todo) {
+      if (showingArchive !== todo.archived || searchText && todo.title.indexOf(searchText) === -1) {
+        return;
+      }
       let element = list.querySelector('#' + todo.id);
       if (element) {
         renderItem(todo, element);
@@ -74,12 +94,18 @@ let render = (function() {
   };
 })();
 
-let update = (function() {
-  return function update(todos) {
-    localStorage.setItem('todos', JSON.stringify(todos));
-    render(todos);
-  }
-})();
+function update(todos) {
+  localStorage.setItem('todos', JSON.stringify(todos));
+  render(todos);
+}
+
+function refresh(todos) {
+  let list = document.querySelector('#todos');
+  localStorage.setItem('todos', JSON.stringify(todos));
+  list.innerHTML = '';
+  list.json = '';
+  render(todos);
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   render(todos);
@@ -93,4 +119,27 @@ document.addEventListener('DOMContentLoaded', function() {
       todoTitleText.value = '';
     }
   });
+
+  document.querySelector('#showTodosButton').addEventListener('click', function() {
+    showingArchive = false;
+    refresh(todos);
+    document.querySelector('#addField').classList.remove('hide');
+  });
+
+  document.querySelector('#showArchivesButton').addEventListener('click', function() {
+    showingArchive = true;
+    refresh(todos);
+    document.querySelector('#addField').classList.add('hide');
+  });
+
+  let text = document.querySelector('#searchText');
+  searchText = text.value = '';
+  let searcher = function() {
+    if (searchText !== text.value) {
+      searchText = text.value;
+      refresh(todos);
+    }
+    setTimeout(searcher, 200);
+  };
+  searcher();
 });
