@@ -1,0 +1,22 @@
+{
+  "name": "pwa",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benishouga/pwa.git"
+  },
+  "author": "akito moriki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benishouga/pwa/issues"
+  },
+  "homepage": "https://benishouga.github.io/pwa/",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "sw-precache": "^4.2.3"
+  }
+}
