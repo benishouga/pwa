@@ -37,7 +37,15 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/pwa/app/icons/icon-144x144.png","b1bbda5af67902f21c93d57828f34edc"],["/pwa/app/index.html","ec5fd7286cd706495db15f3cbc2451da"],["/pwa/app/main.js","a5c5e063c4e0ee588c1ffcf834179bb5"],["/pwa/app/mdl/material.min.css","eb03df85573fa820f699bc3bc8b97182"],["/pwa/app/mdl/material.min.js","2362b9ff51ed98f0809360b696065874"],["/pwa/app/style.css","7ee70f807a3b96f695053bf453e33e65"]];
+var precacheConfig = [
+  ["/pwa/app/icons/icon-144x144.png", "b1bbda5af67902f21c93d57828f34edc"],
+  ["/pwa/app/index.html", "ec5fd7286cd706495db15f3cbc2451da"],
+  ["/pwa/app/main.js", "a5c5e063c4e0ee588c1ffcf834179bb5"],
+  ["/pwa/app/mdl/material.min.css", "eb03df85573fa820f699bc3bc8b97182"],
+  ["/pwa/app/mdl/material.min.js", "2362b9ff51ed98f0809360b696065874"],
+  ["/pwa/app/style.css", "7ee70f807a3b96f695053bf453e33e65"],
+  ["https://fonts.googleapis.com/icon?family=Material+Icons", "2362b9ff51ed98f695053bf453e33e65"]
+];
 var cacheName = 'sw-precache-v2--' + (self.registration ? self.registration.scope : '');
 
 
