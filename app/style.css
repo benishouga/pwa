@@ -17,3 +17,7 @@ li.checked span {
 .hide {
     display: none;
 }
+
+#deleteAll {
+    margin-top: 48px;
+}

@@ -120,16 +120,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  document.querySelector('#showTodosButton').addEventListener('click', function() {
+  let hideMenu = function() {
+    document.querySelector('.mdl-layout__drawer').classList.remove('is-visible');
+    document.querySelector('.mdl-layout__obfuscator').classList.remove('is-visible');
+  };
+
+  let showTodos = function() {
     showingArchive = false;
     refresh(todos);
     document.querySelector('#addField').classList.remove('hide');
-  });
+  };
 
-  document.querySelector('#showArchivesButton').addEventListener('click', function() {
+  let showArchives = function() {
     showingArchive = true;
     refresh(todos);
     document.querySelector('#addField').classList.add('hide');
+  };
+
+  document.querySelector('#showTodosButton').addEventListener('click', function() {
+    showTodos();
+    hideMenu();
+  });
+
+  document.querySelector('#showArchivesButton').addEventListener('click', function() {
+    showArchives();
+    hideMenu();
+  });
+
+  var dialog = document.querySelector('dialog');
+  document.querySelector('#deleteAll').addEventListener('click', function() {
+    dialog.showModal();
+  });
+  dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.close();
+  });
+  document.querySelector('#deleteOk').addEventListener('click', function() {
+    console.log('deleteOk');
+    dialog.close();
+    hideMenu();
+    todos = [];
+    showTodos();
   });
 
   let text = document.querySelector('#searchText');

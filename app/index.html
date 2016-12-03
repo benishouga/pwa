@@ -31,10 +31,11 @@
       </div>
     </header>
     <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Trial PWA Todo</span>
+      <span class="mdl-layout-title">PWA Todo</span>
       <nav class="mdl-navigation">
         <a id="showTodosButton" class="mdl-navigation__link" href="#">Todos</a>
         <a id="showArchivesButton" class="mdl-navigation__link" href="#">Archives</a>
+        <a id="deleteAll" class="mdl-navigation__link" href="#">Delete all</a>
       </nav>
     </div>
     <main class="mdl-layout__content">
@@ -70,6 +71,15 @@
           </ul>
         </div>
       </div>
+      <dialog class="mdl-dialog">
+        <div class="mdl-dialog__content">
+          <p>Are you sure you want to delete all?</p>
+        </div>
+        <div class="mdl-dialog__actions">
+          <button id="deleteOk" type="button" class="mdl-button">Delete all</button>
+          <button type="button" class="mdl-button close">Cancel</button>
+        </div>
+      </dialog>
     </main>
   </div>
   <script type="text/javascript">
