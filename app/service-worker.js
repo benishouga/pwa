@@ -39,8 +39,8 @@
 
 var precacheConfig = [
   ["/pwa/app/icons/icon-144x144.png", "b1bbda5af67902f21c93d57828f34edc"],
-  ["/pwa/app/index.html", "641f5e782d65a2d8f8db29d0cdebe8af"],
-  ["/pwa/app/main.js", "a5c5e063c4e0ee588c1ffcf834179bb5"],
+  ["/pwa/app/index.html", "608860833e0700ea3066a193033c3c94"],
+  ["/pwa/app/main.js", "1dd28cb6f2a037550e7347c129db2b68"],
   ["/pwa/app/mdl/material.min.css", "eb03df85573fa820f699bc3bc8b97182"],
   ["/pwa/app/mdl/material.min.js", "2362b9ff51ed98f0809360b696065874"],
   ["/pwa/app/style.css", "7ee70f807a3b96f695053bf453e33e65"],
